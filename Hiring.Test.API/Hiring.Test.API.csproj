@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Hiring.Test.Data\Hiring.Test.Data.csproj" />
+		<ProjectReference Include="..\Hiring.Test.Model\Hiring.Test.Model.csproj" />
+		<ProjectReference Include="..\Hiring.Test.Services\Hiring.Test.Services.csproj" />
+	</ItemGroup>
+
+</Project>
