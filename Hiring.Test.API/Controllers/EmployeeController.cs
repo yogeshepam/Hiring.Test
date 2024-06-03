@@ -66,26 +66,33 @@ namespace Hiring.Test.API.Controllers
 
                 int swapIndex2 = -1;
 
-                // Find the indices to swap
-                for (int i = 0; i < input.Length; i++)
-                {
-                    if (input[i] == 1 && swapIndex1 == -1)
-                    {
-                        swapIndex1 = i;
-                    }
-                    else if (input[i] == 0 && swapIndex1 != -1)
-                    {
-                        swapIndex2 = i;
-                    }
-                }
+                int index1 = Array.LastIndexOf(input, 0);
+                int index2 = Array.IndexOf(input, 1);
 
-                // Perform the swap
-                if (swapIndex1 != -1 && swapIndex2 != -1)
-                {
-                    int temp = input[swapIndex1];
-                    input[swapIndex1] = input[swapIndex2];
-                    input[swapIndex2] = temp;
-                }
+                int temp = input[index1];
+                input[index1] = input[index2];
+                input[index2] = temp;
+
+                //// Find the indices to swap
+                //for (int i = 0; i < input.Length; i++)
+                //{
+                //    if (input[i] == 1 && swapIndex1 == -1)
+                //    {
+                //        swapIndex1 = i;
+                //    }
+                //    else if (input[i] == 0 && swapIndex1 != -1)
+                //    {
+                //        swapIndex2 = i;
+                //    }
+                //}
+
+                //// Perform the swap
+                //if (swapIndex1 != -1 && swapIndex2 != -1)
+                //{
+                //    int temp = input[swapIndex1];
+                //    input[swapIndex1] = input[swapIndex2];
+                //    input[swapIndex2] = temp;
+                //}
 
                 return input;
             }

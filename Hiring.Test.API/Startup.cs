@@ -25,7 +25,7 @@ namespace Hiring.Test.API
             services.AddControllers();
             services.AddHttpClient("Employee", client =>
             {
-                client.BaseAddress = new Uri("https://fakestoreapi.com/products/category/");
+                client.BaseAddress = new Uri("https://fakestoreapi.com/products/category/jewelery");
             });
             services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
             services.AddSingleton<IEmployeeService, EmployeeService>();

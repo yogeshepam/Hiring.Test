@@ -36,17 +36,12 @@ namespace Hiring.Test.Data
 
         public object GetAvgDeptSalary(string departmentName)
         {
-            var lstemp = AllEmployees();
-            var emp  = lstemp.Where(x=> x.Department.Name.ToLower() == departmentName.ToLower()).ToList();
-
-            return _employeeService.AvgDeptSalary(emp);
+            return _employeeService.AvgDeptSalary(AllEmployees(), departmentName);
         }
 
         public object GetDepartmentwiseEmp()
         {
-            var lstemp = AllEmployees();
-
-            return _employeeService.EmployeeCount(lstemp);
+            return _employeeService.EmployeeCount(AllEmployees());
         }
 
         public List<Employee>? GetEmployeeAsync(string? firstName, string? lastName, string? salary, string? departmentName)
@@ -96,12 +91,9 @@ namespace Hiring.Test.Data
 
         public object UniqueLocations(string deptName)
         {
-            var emp = AllEmployees();
-            var lstEmp = emp.GroupBy(x => x.Department.Name)
-                        .Select(x => x.FirstOrDefault())
-                        .Where(x => x.Department.Name == deptName).ToList();
+            var emp = AllEmployees();      
 
-            return _employeeService.UniqueLocations(lstEmp);
+            return _employeeService.UniqueLocations(emp, deptName);
 
         }
     }
